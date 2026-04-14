@@ -4,7 +4,9 @@ This repository lets the community contribute additional fetchers for municipal 
 
 ## Description
 
-A community-contributed plugin package that extends [Clerk](https://github.com/civic-band/clerk) with fetchers for municipal government meeting minutes and documents. Each fetcher targets a specific city or municipality, scraping meeting listings and downloading associated PDFs. New fetchers can be added by the community following the included example and contributor guide.
+A community-contributed plugin package that extends [Clerk](https://github.com/civic-band/clerk) with fetchers for municipal government meeting minutes and agendas. Each fetcher targets a specific municipality, scraping meeting listings and downloading associated PDFs. These fetchers, if accepted, will feed PDFs into CivicBand's pipeline. Data will be available for search approximately 24 hours after the first successful fetcher run. 
+
+Anyone can add new fetchers following the included example and [Contributor Guide](CONTRIBUTING.md).
 
 TODO: Describe how this repo fits into Civic Band
 
