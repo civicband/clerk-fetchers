@@ -14,7 +14,10 @@ These fetchers, if accepted, will feed PDFs into CivicBand's pipeline. Data will
 
 ### Dependencies
 
-* TODO: List Dependencies
+* Python 3.12+
+* UV package manager
+* [clerk](https://github.com/civic-band/clerk) >= 0.0.1
+* Dev dependencies: `pytest>=7.4.0`, `respx>=0.23.0`, `hatchling` build system
 
 ### Developer Setup
 
