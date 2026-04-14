@@ -39,4 +39,4 @@ Open a [GitHub issue](../../issues) to report bugs or request help with a fetche
 
 ## License
 
-This project is licensed under the BSD 3-Clause License - see the LICENSE.md file for details.
+This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details.
