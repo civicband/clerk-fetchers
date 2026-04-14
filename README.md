@@ -21,7 +21,13 @@ These fetchers, if accepted, will feed PDFs into CivicBand's pipeline. Data will
 
 ### Developer Setup
 
-* TODO: Describe how to begin developing in this repo
+See [**Adding a fetcher to clerk-fetchers**](CONTRIBUTING.md#adding-a-fetcher-to-clerk-fetchers) in the Contributor Guide for full setup instructions. At a high level:
+
+1. Fork this repo and create a feature branch
+2. Add your fetcher under `src/clerk_fetchers/fetchers/<municipality_name>/`
+3. Register it in `src/clerk_fetchers/_registry.py`
+4. Write tests in `tests/fetchers/<municipality_name>/`
+5. Open a PR — CI will run the full test suite
 
 ### Testing
 
