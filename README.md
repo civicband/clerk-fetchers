@@ -35,7 +35,7 @@ Run `pytest` locally to check your fetcher before submitting. CI also runs the f
 
 ## Help
 
-TODO: Describe how to report issues or request assistance from project maintainers
+Open a [GitHub issue](../../issues) to report bugs or request help with a fetcher you're trying to add. To reach the maintainers privately, email Philip at [hello@civic.band](mailto:hello@civic.band).
 
 ## License
 
