@@ -31,7 +31,7 @@ See [**Adding a fetcher to clerk-fetchers**](CONTRIBUTING.md#adding-a-fetcher-to
 
 ### Testing
 
-* TODO: Describe how to test your code in this repo
+Run `pytest` locally to check your fetcher before submitting. That said, don't stress — CI will run the full test suite automatically when you open a PR.
 
 ## Help
 
