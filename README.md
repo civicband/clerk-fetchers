@@ -8,7 +8,7 @@ A community-contributed repository that extends [Clerk](https://github.com/civic
 
 Anyone can add new fetchers following the included example and [Contributor Guide](CONTRIBUTING.md).
 
-These fetchers, if accepted, will feed PDFs into CivicBand's pipeline. Data will be available for search approximately 24 hours after the first successful fetcher run. 
+These fetchers, if accepted, will feed PDFs into CivicBand's pipeline. Data will be available for search approximately 24 business hours after the first successful fetcher run. 
 
 ## Getting Started
 
