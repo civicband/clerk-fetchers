@@ -1,6 +1,6 @@
 # Clerk-Fetchers
 
-This repository lets the community contribute additional fetchers for municipal government meeting minutes and agendas to extend [Clerk](https://github.com/civic-band/clerk). Check out the Contributor Guide and included example to get started! 
+This repository lets the community contribute additional fetchers for municipal government meeting minutes and agendas to extend [Clerk](https://github.com/civic-band/clerk). Check out the [Contributor Guide](CONTRIBUTING.md) and included example to get started! 
 
 ## Description
 
