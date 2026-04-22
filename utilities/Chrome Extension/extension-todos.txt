@@ -2,9 +2,9 @@ Completed:
 - Make skeleton for extension
 - Add placeholder text to skeleton
 - Add icon for extension
+- Test extension locally
 
 Outstanding:
-- Test extension locally
 - Compile list of supported backends
 - Find indicators for each backend supported
 - Write instructions for requesting inclusion of a site on a supported backend
