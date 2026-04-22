@@ -1,0 +1,10 @@
+{
+  "name": "Scraper Checker Extension",
+  "description": "This is an extension you can use on Civic Meeting sites to check whether data is hosted by one of the major backend systems Civic Band supports. If so, it tells you which one!",
+  "version": "0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "civic_band.png"
+  }
+}
