@@ -22,15 +22,15 @@ chrome.action.onClicked.addListener(async (tab) => {
       /* Supported sites:
       agendacenter
       civicclerk
-      eboard
-      escribe
-      granicus
-      iqm2
-      laserfiche - unfinished WIP
       legistar
-      municode
+      granicus
+      escribe
+      primegov
+      iqm2
       onbase
-      primegov */
+      municode
+      eboard - seemingly not yet in use?
+      laserfiche - unfinished WIP   */
       };
      else if (nextState === "OFF") {
       // If we end up using any temp files or similar, we should delete those
