@@ -1,0 +1,17 @@
+Completed:
+- Make skeleton for extension
+- Add placeholder text to skeleton
+
+Outstanding:
+- Add icon for extension
+- Test extension locally
+- Compile list of supported backends
+- Find indicators for each backend supported
+- Write instructions for requesting inclusion of a site on a supported backend
+- Write issue format for a custom scraper request
+- Make sure both sets of text tell users to check for their municipality before requesting
+- [Repeat until all covered scrapers are addressed] Write detection for supported backend that shows users text about how to request if it's a match
+- Write fallback case where users whose site doesn't match anything can request it
+
+Stretch: 
+- If a user uses the extension for a site that's already being scraped, tell them the URL instead of giving them the prompt
