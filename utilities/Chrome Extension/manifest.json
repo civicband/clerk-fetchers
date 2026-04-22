@@ -8,3 +8,11 @@
     "default_icon": "civicband.png"
   }
 }
+
+{
+  ...
+  "background": {
+    "service_worker": "background.js"
+  },
+  ...
+}
