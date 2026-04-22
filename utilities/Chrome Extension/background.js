@@ -16,4 +16,24 @@ chrome.action.onClicked.addListener(async (tab) => {
       tabId: tab.id,
       text: nextState,
     });
+
+    if (nextState === "ON") {
+      // All the checks go in here
+      /* Supported sites:
+      agendacenter
+      civicclerk
+      eboard
+      escribe
+      granicus
+      iqm2
+      laserfiche - unfinished WIP
+      legistar
+      municode
+      onbase
+      primegov */
+      };
+     else if (nextState === "OFF") {
+      // If we end up using any temp files or similar, we should delete those
+      // Maybe there will be cleanup to go in here, but probably not
+      };
 });
