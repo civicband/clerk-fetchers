@@ -3,9 +3,10 @@ Completed:
 - Add placeholder text to skeleton
 - Add icon for extension
 - Test extension locally
+- Compile list of supported backends
 
 Outstanding:
-- Compile list of supported backends
+- Pseudocode in TODOs for each backend so I've got a spot to hold indicators
 - Find indicators for each backend supported
 - Write instructions for requesting inclusion of a site on a supported backend
 - Write issue format for a custom scraper request
@@ -15,3 +16,16 @@ Outstanding:
 
 Stretch: 
 - If a user uses the extension for a site that's already being scraped, tell them the URL instead of giving them the prompt
+
+List of Supported Backends (Holding here temporarily):
+agendacenter
+civicclerk
+eboard
+escribe
+granicus
+iqm2
+laserfiche
+legistar
+municode
+onbase
+primegov
