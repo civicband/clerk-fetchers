@@ -1,1 +1,5 @@
-//Placeholder file to hold any tasks we need a background service worked for
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.action.setBadgeText({
+    text: "OFF", //Extension is off by default when installed
+  });
+});
