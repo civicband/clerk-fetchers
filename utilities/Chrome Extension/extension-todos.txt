@@ -1,9 +1,9 @@
 Completed:
 - Make skeleton for extension
 - Add placeholder text to skeleton
+- Add icon for extension
 
 Outstanding:
-- Add icon for extension
 - Test extension locally
 - Compile list of supported backends
 - Find indicators for each backend supported
