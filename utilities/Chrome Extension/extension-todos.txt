@@ -16,3 +16,4 @@ Outstanding:
 
 Stretch: 
 - If a user uses the extension for a site that's already being scraped, tell them the URL instead of giving them the prompt
+- Would be nice to give the user a copy-pasteable issue filled out with the info we need to add the site if we don't have it yet
