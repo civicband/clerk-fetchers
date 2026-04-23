@@ -30,7 +30,9 @@ chrome.action.onClicked.addListener(async (tab) => {
       onbase
       municode
       eboard - seemingly not yet in use?
-      laserfiche - unfinished WIP   */
+      laserfiche - unfinished WIP   
+      The last check before assuming custom scraper should make sure there's no Archive link;
+        if there is an archive link, ask the user to click it and run this again*/
       };
      else if (nextState === "OFF") {
       // If we end up using any temp files or similar, we should delete those
