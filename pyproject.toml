@@ -1,10 +1,13 @@
 [project]
 name = "clerk-fetchers"
-version = "0.0.1"
-description = "Community-contributed fetchers for clerk"
+dynamic = ["version"]
+description = "Community-contributed fetchers for civicband-clerk"
+readme = "README.md"
+authors = [{ name = "Philip James", email = "phildini@phildini.net" }]
 requires-python = ">=3.12"
 dependencies = [
-    "clerk>=0.0.1",
+    "civicband-clerk>=0.1.1",
+    "parsedatetime>=2.6",
 ]
 
 [project.entry-points."clerk.plugins"]
@@ -19,6 +22,12 @@ dev = [
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/clerk/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fetchers"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

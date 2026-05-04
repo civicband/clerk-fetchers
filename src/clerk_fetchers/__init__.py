@@ -11,3 +11,6 @@ class ClerkFetchersPlugin:
     @hookimpl
     def fetcher_extra(self, label):
         return EXTRA_REGISTRY.get(label)
+
+
+__version__ = "0.0.1"
