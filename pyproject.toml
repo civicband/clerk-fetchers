@@ -5,6 +5,15 @@ description = "Community-contributed fetchers for civicband-clerk"
 readme = "README.md"
 authors = [{ name = "Philip James", email = "phildini@phildini.net" }]
 requires-python = ">=3.12"
+
+Homepage = "https://github.com/civicband/clerk-fetchers"
+Documentation = "https://github.com/civicband/clerk-fetchers/blob/main/README.md"
+Repository = "https://github.com/civicband/clerk-fetchers"
+Issues = "https://github.com/civicband/clerk-fetchers/issues"
+Mastodon = "https://sfba.social/@civicband"
+Bluesky = "https://bsky.app/profile/civic.band"
+Funding = "https://opencollective.com/civicband"
+
 dependencies = [
     "civicband-clerk>=0.1.1",
     "parsedatetime>=2.6",
