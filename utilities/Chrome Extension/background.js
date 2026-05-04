@@ -20,17 +20,22 @@ chrome.action.onClicked.addListener(async (tab) => {
     if (nextState === "ON") {
       // All the checks go in here
       /* Supported sites:
-      if (condition): agendacenter
-      elif (condition): civicclerk
+      if (URL contains *.civicclerk.com/): civicclerk
       elif (URL contains *.legistar.com): legistar
-      elif (condition): granicus
-      elif (condition): escribe
-      elif (condition): primegov
-      elif (condition): iqm2
-      elif (condition): onbase
-      elif (condition): municode
-      elif (condition): eboard - seemingly not yet in use?
-      elif (condition): laserfiche - unfinished WIP   
+      elif (URL contains *.granicus.com): granicus
+      elif (URL contains *.escribemeetings.com): escribe
+      elif (URL contains *.primegov.com): primegov
+      elif (primary page URL ends in /agendacenter): agendacenter 
+        //NOTE: AgendaCenter is more prevalent than some of those that come before it in this list, 
+        // but some pages false-flag agendacenter when they're actually embeds from a previous option, 
+        // so we should NOT move this up the list.
+      elif (URL contains *.iqm2.com): iqm2
+      elif (URL contains *onbase* OR [other conditions TKTK]): onbase
+      elif (course includes "Aha change 20170911"): municode 
+        // Comment originating from a dependency but their code uses such clear language 
+        // that nothing else feels specific to them
+      elif (condition TKTK): eboard - seemingly not yet in use?
+      elif (condition TKTK): laserfiche - unfinished WIP   
       elif (there's an Archive link): ask the user to click it and run this again
       else: Assume custom scraper */
       };
