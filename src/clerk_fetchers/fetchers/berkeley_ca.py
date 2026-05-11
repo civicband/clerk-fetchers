@@ -117,7 +117,9 @@ class BerkeleyCAFetcher(Fetcher):
             headers=headers,
             json=json_data,
         )
-        if response and not response.json():
+        if not response:
+            return 0, 0
+        if not response.json():
             self.logger.log(f"No data found for {json_data['SearchText']}")
             return 0, 0
         try:
@@ -158,6 +160,11 @@ class BerkeleyCAFetcher(Fetcher):
                 continue
             pdf_url = f"https://records.cityofberkeley.info/PublicAccess/api/Document/{item['ID'].replace('=', '%3D')}"
             pdf_response = self.request("GET", pdf_url)
+            if not pdf_response:
+                self.logger.log(
+                    f"Failed to fetch PDF for {item['Name']}", level="error"
+                )
+                continue
             with open(filepath, "wb") as pdf_file:
                 pdf_file.write(pdf_response.content)
                 fetched_minutes += 1
