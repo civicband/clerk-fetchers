@@ -1,0 +1,50 @@
+name: 🏙️ New Site
+description: Request a fetcher for a municipal site not currently supported by our fetchers
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to submit an new site request!
+
+        **Please provide as much information as you have available. The more information we have, the better we will be able to help resolve the issue.**
+
+        ## Details
+
+  - type: dropdown
+    id: backend
+    attributes:
+      label: What backend does the municipal site use?
+      options:
+        - AgendaCenter
+        - BoardDocs
+        - CivicClerk
+        - EBoard
+        - Granicus
+        - IQM2
+        - Legistar
+        - Municode
+        - OnBase
+        - PrimeGov
+        - Other
+        - I'm not sure / I don't know
+    validations:
+      required: true
+
+  - type: textarea
+    id: other_info
+    attributes:
+      label: Any other information to share?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist for new issues
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/civicband/.github/blob/main/CODE_OF_CONDUCT.md)
+          required: true
+        - label: I have searched the existing issues and believe this is not a duplicate
+          required: true
