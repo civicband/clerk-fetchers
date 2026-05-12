@@ -31,18 +31,34 @@ chrome.action.onClicked.addListener(async (tab) => {
       console.log(currentTabURL);
       // All the checks go in here
       /* Supported sites:
-      if (URL contains *.civicclerk.com/): civicclerk
-      elif (URL contains *.legistar.com): legistar
-      elif (URL contains *.granicus.com): granicus
-      elif (URL contains *.escribemeetings.com): escribe
-      elif (URL contains *.primegov.com): primegov
-      elif (primary page URL ends in /agendacenter): agendacenter 
+      if (currentTabURL.includes(".civicclerk.com/")){
+         civicclerk
+        } 
+      elif (currentTabURL.includes(".legistar.com")){
+        legistar
+        } 
+      elif (currentTabURL.includes(".granicus.com")){
+        granicus
+        }
+      elif (currentTabURL.includes(".escribemeetings.com")){
+        escribe
+        }
+      elif (currentTabURL.includes(".primegov.com")){
+        primegov
+        }
+      elif (primary page URL ends in /agendacenter){
+        agendacenter
+        }
         //NOTE: AgendaCenter is more prevalent than some of those that come before it in this list, 
         // but some pages false-flag agendacenter when they're actually embeds from a previous option, 
         // so we should NOT move this up the list.
-      elif (URL contains *.iqm2.com): iqm2
-      elif (URL contains *onbase* OR [other conditions TKTK]): onbase
-      elif (course includes "Aha change 20170911"): municode 
+      elif (currentTabURL.includes(".iqm2.com")){
+        iqm2
+        }
+      elif (currentTabURL.includes("onbase") OR [other conditions TKTK]){
+        onbase
+        }
+      elif (source includes "Aha change 20170911"): municode 
         // Comment originating from a dependency but their code uses such clear language 
         // that nothing else feels specific to them
       elif (condition TKTK): eboard - seemingly not yet in use?
