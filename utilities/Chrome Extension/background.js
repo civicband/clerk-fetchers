@@ -35,40 +35,46 @@ chrome.action.onClicked.addListener(async (tab) => {
         await chrome.action.setPopup({ tabId: tab.id, popup: "civicclerk.html" });
         await chrome.action.openPopup(); // opens the popup
         } 
-      /*elif (currentTabURL.includes(".legistar.com")){
-        legistar
+      else if (currentTabURL.includes(".legistar.com")){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "legistar.html" });
+        await chrome.action.openPopup(); // opens the popup
         } 
-      elif (currentTabURL.includes(".granicus.com")){
-        granicus
+      else if (currentTabURL.includes(".granicus.com")){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "granicus.html" });
+        await chrome.action.openPopup(); // opens the popup
         }
-      elif (currentTabURL.includes(".escribemeetings.com")){
-        escribe
+      else if (currentTabURL.includes(".escribemeetings.com")){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "escribe.html" });
+        await chrome.action.openPopup(); // opens the popup
         }
-      elif (currentTabURL.includes(".primegov.com")){
-        primegov
+      else if (currentTabURL.includes(".primegov.com")){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "primegov.html" });
+        await chrome.action.openPopup(); // opens the popup
         }
-      elif (primary page URL ends in /agendacenter){
-        agendacenter
-        }
+      //else if (primary page URL ends in /agendacenter){
+      //  await chrome.action.setPopup({ tabId: tab.id, popup: "agendacenter.html" });
+      //  await chrome.action.openPopup(); // opens the popup
+      //  }
         //NOTE: AgendaCenter is more prevalent than some of those that come before it in this list, 
         // but some pages false-flag agendacenter when they're actually embeds from a previous option, 
         // so we should NOT move this up the list.
-      elif (currentTabURL.includes(".iqm2.com")){
-        iqm2
+      else if (currentTabURL.includes(".iqm2.com")){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "iqm2.html" });
+        await chrome.action.openPopup(); // opens the popup
         }
-      elif (currentTabURL.includes("onbase") OR [other conditions TKTK]){
-        onbase
-        }
-      elif (source includes "Aha change 20170911"): municode 
+      //else if (currentTabURL.includes("onbase") OR [other conditions TKTK]){
+      //  onbase
+      //  }
+      //else if (source includes "Aha change 20170911"): municode 
         // Comment originating from a dependency but their code uses such clear language 
         // that nothing else feels specific to them
-      elif (condition TKTK): eboard - seemingly not yet in use?
-      elif (condition TKTK): laserfiche - unfinished WIP   
-      elif (there's an Archive link): ask the user to click it and run this again
-      else: Assume custom scraper */
+      //else if (condition TKTK): eboard - seemingly not yet in use?
+      //else if (condition TKTK): laserfiche - unfinished WIP   
+      //else if (there's an Archive link): ask the user to click it and run this again
+      //actual else: Assume custom scraper; for now I'm using the placeholder because I don't want to fill the issue tracker with junk data
+        else {
+          await chrome.action.setPopup({ tabId: tab.id, popup: "hello.html" });
+          await chrome.action.openPopup(); // opens the popup
+        }
       };
-    // else if (nextState === "OFF") {
-      // If we end up using any temp files or similar, we should delete those
-      // Maybe there will be cleanup to go in here, but probably not
-    //  };
 });
