@@ -51,10 +51,10 @@ chrome.action.onClicked.addListener(async (tab) => {
         await chrome.action.setPopup({ tabId: tab.id, popup: "primegov.html" });
         await chrome.action.openPopup(); // opens the popup
         }
-      //else if (primary page URL ends in /agendacenter){
-      //  await chrome.action.setPopup({ tabId: tab.id, popup: "agendacenter.html" });
-      //  await chrome.action.openPopup(); // opens the popup
-      //  }
+      else if (currentTabURL.endsWith("/AgendaCenter")){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "agendacenter.html" });
+        await chrome.action.openPopup(); // opens the popup
+        }
         //NOTE: AgendaCenter is more prevalent than some of those that come before it in this list, 
         // but some pages false-flag agendacenter when they're actually embeds from a previous option, 
         // so we should NOT move this up the list.
