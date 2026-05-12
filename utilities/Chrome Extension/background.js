@@ -30,11 +30,12 @@ chrome.action.onClicked.addListener(async (tab) => {
          }
       console.log(currentTabURL);
       // All the checks go in here
-      /* Supported sites:
+      // Supported sites:
       if (currentTabURL.includes(".civicclerk.com/")){
-         civicclerk
+        await chrome.action.setPopup({ tabId: tab.id, popup: "civicclerk.html" });
+        await chrome.action.openPopup(); // opens the popup
         } 
-      elif (currentTabURL.includes(".legistar.com")){
+      /*elif (currentTabURL.includes(".legistar.com")){
         legistar
         } 
       elif (currentTabURL.includes(".granicus.com")){
