@@ -18,6 +18,17 @@ chrome.action.onClicked.addListener(async (tab) => {
     });
 
     if (nextState === "ON") {
+      let currentTabURL;
+      try {
+        currentTabURL = tab.url;
+        if (!currentTabURL) {
+          throw new Error("Invalid tab! It might be empty or undefined.");
+        }
+      } catch (error) {
+        console.error("Invalid tab! It might be empty or undefined.", error);
+        return;
+         }
+      console.log(currentTabURL);
       // All the checks go in here
       /* Supported sites:
       if (URL contains *.civicclerk.com/): civicclerk
@@ -39,8 +50,8 @@ chrome.action.onClicked.addListener(async (tab) => {
       elif (there's an Archive link): ask the user to click it and run this again
       else: Assume custom scraper */
       };
-     else if (nextState === "OFF") {
+    // else if (nextState === "OFF") {
       // If we end up using any temp files or similar, we should delete those
       // Maybe there will be cleanup to go in here, but probably not
-      };
+    //  };
 });
