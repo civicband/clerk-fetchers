@@ -21,6 +21,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       let currentTabURL;
       try {
         currentTabURL = tab.url;
+        currentTabTitle = tab.title;
         if (!currentTabURL) {
           throw new Error("Invalid tab! It might be empty or undefined.");
         }
@@ -62,9 +63,10 @@ chrome.action.onClicked.addListener(async (tab) => {
         await chrome.action.setPopup({ tabId: tab.id, popup: "iqm2.html" });
         await chrome.action.openPopup(); // opens the popup
         }
-      //else if (currentTabURL.includes("onbase") OR [other conditions TKTK]){
-      //  onbase
-      //  }
+      else if (currentTabURL.includes("onbase") || currentTabTitle.includes("OnBase Agenda Online"){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "onbase.html" });
+        await chrome.action.openPopup();
+        }
       //else if (source includes "Aha change 20170911"): municode 
         // Comment originating from a dependency but their code uses such clear language 
         // that nothing else feels specific to them
