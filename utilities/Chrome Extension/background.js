@@ -25,13 +25,13 @@ chrome.action.onClicked.addListener(async (tab) => {
         if (!currentTabURL) {
           throw new Error("Invalid tab! It might be empty or undefined.");
         }
-      } catch (error) {
+      } 
+      catch (error) {
         console.error("Invalid tab! It might be empty or undefined.", error);
         return;
          }
       console.log(currentTabURL);
       // All the checks go in here
-      // Supported sites:
       if (currentTabURL.includes(".civicclerk.com/")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "civicclerk.html" });
         await chrome.action.openPopup();
@@ -53,12 +53,12 @@ chrome.action.onClicked.addListener(async (tab) => {
         await chrome.action.openPopup();
         }
       else if (currentTabURL.endsWith("/AgendaCenter")){
-        await chrome.action.setPopup({ tabId: tab.id, popup: "agendacenter.html" });
-        await chrome.action.openPopup();
-        }
         //NOTE: AgendaCenter is more prevalent than some of those that come before it in this list, 
         // but some pages false-flag agendacenter when they're actually embeds from a previous option, 
         // so we should NOT move this up the list.
+        await chrome.action.setPopup({ tabId: tab.id, popup: "agendacenter.html" });
+        await chrome.action.openPopup();
+        }
       else if (currentTabURL.includes(".iqm2.com")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "iqm2.html" });
         await chrome.action.openPopup();
