@@ -63,7 +63,7 @@ chrome.action.onClicked.addListener(async (tab) => {
         await chrome.action.setPopup({ tabId: tab.id, popup: "iqm2.html" });
         await chrome.action.openPopup(); // opens the popup
         }
-      else if (currentTabURL.includes("onbase") || currentTabTitle.includes("OnBase Agenda Online"){
+      else if (currentTabURL.includes("onbase") || currentTabTitle.includes("OnBase Agenda Online")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "onbase.html" });
         await chrome.action.openPopup();
         }
