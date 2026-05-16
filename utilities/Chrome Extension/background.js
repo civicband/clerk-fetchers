@@ -34,34 +34,34 @@ chrome.action.onClicked.addListener(async (tab) => {
       // Supported sites:
       if (currentTabURL.includes(".civicclerk.com/")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "civicclerk.html" });
-        await chrome.action.openPopup(); // opens the popup
+        await chrome.action.openPopup();
         } 
       else if (currentTabURL.includes(".legistar.com")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "legistar.html" });
-        await chrome.action.openPopup(); // opens the popup
+        await chrome.action.openPopup();
         } 
       else if (currentTabURL.includes(".granicus.com")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "granicus.html" });
-        await chrome.action.openPopup(); // opens the popup
+        await chrome.action.openPopup();
         }
       else if (currentTabURL.includes(".escribemeetings.com")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "escribe.html" });
-        await chrome.action.openPopup(); // opens the popup
+        await chrome.action.openPopup();
         }
       else if (currentTabURL.includes(".primegov.com")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "primegov.html" });
-        await chrome.action.openPopup(); // opens the popup
+        await chrome.action.openPopup();
         }
       else if (currentTabURL.endsWith("/AgendaCenter")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "agendacenter.html" });
-        await chrome.action.openPopup(); // opens the popup
+        await chrome.action.openPopup();
         }
         //NOTE: AgendaCenter is more prevalent than some of those that come before it in this list, 
         // but some pages false-flag agendacenter when they're actually embeds from a previous option, 
         // so we should NOT move this up the list.
       else if (currentTabURL.includes(".iqm2.com")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "iqm2.html" });
-        await chrome.action.openPopup(); // opens the popup
+        await chrome.action.openPopup();
         }
       else if (currentTabURL.includes("onbase") || currentTabTitle.includes("OnBase Agenda Online")){
         await chrome.action.setPopup({ tabId: tab.id, popup: "onbase.html" });
@@ -82,7 +82,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       //actual else: Assume custom scraper; for now I'm using the placeholder because I don't want to fill the issue tracker with junk data
         else {
           await chrome.action.setPopup({ tabId: tab.id, popup: "hello.html" });
-          await chrome.action.openPopup(); // opens the popup
+          await chrome.action.openPopup();
         }
       };
 });
