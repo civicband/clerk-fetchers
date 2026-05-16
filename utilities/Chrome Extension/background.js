@@ -70,7 +70,9 @@ chrome.action.onClicked.addListener(async (tab) => {
       //else if (source includes "Aha change 20170911"): municode 
         // Comment originating from a dependency but their code uses such clear language 
         // that nothing else feels specific to them
-      //else if (condition TKTK): eboard - seemingly not yet in use?
+      else if (currentTabURL.includes(".eboardsolutions.com")){
+        await chrome.action.setPopup({ tabId: tab.id, popup: "eboard.html" });
+        await chrome.action.openPopup();
       //else if (condition TKTK): laserfiche - unfinished WIP   
       //else if (there's an Archive link): ask the user to click it and run this again
       //actual else: Assume custom scraper; for now I'm using the placeholder because I don't want to fill the issue tracker with junk data
