@@ -135,3 +135,6 @@ class YourPlugin:
 ```
 
 This clerk-fetchers repository serves as the reference implementation for this pattern.
+
+# Still Have Questions?
+Check out our [FAQs](FAQ.md) for more information about when or why you'd need a custom scraper, how to get started, and more!
