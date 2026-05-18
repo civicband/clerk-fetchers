@@ -10,5 +10,4 @@ Information coming soon!
 Information coming soon!
 
 # What if my municipality hosts minutes/agendas in multiple places?
-Information coming soon!
-
+Right now, due to technical limitations, we ask that you just pick one primary scraper to use. We have an [open issue](https://github.com/civicband/clerk/issues/6) to fix this in the [Clerk](https://github.com/civicband/clerk/) repository, and it has a [subtask](https://github.com/civicband/clerk/issues/145#issue-4471550967) to update this FAQ when it's fixed.
