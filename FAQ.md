@@ -1,9 +1,12 @@
 # FAQs
 
 Before you dive too deep here, you might want to start with our [Contributors' Guide](CONTRIBUTING.md) and overall [Readme](README.md). If you've read those and still need more answers, 
-check out the info here! If you still have questions after that, please join the [Zulip]() to ask or open an [Issue](https://github.com/civicband/clerk-fetchers/issues). 
+check out the info here! If you still have questions after that, you can join the [Zulip](https://civictown.zulipchat.com/join/jmprqfsjk63a5fqwkq3kafvr/) to ask or open an [Issue](https://github.com/civicband/clerk-fetchers/issues) on this repository. 
 
-# How can I tell if my city uses a supported backend, or if we need a custom scraper?
+# What's a municipality?
+Municipalities are civic bodies like cities, towns, boroughs, counties, and public boards (like a School Board or a Port District Oversight Board). For Civic Band's purposes, states and countries do not count as municipalities.
+
+# How can I tell if my municipality uses a supported backend, or if we need a custom scraper?
 
 We have a WIP-draft Chrome extension experiment that should be able to help you tell, but it's not really ready to use yet. For now, navigate to the page that has the actual PDFs of your meeting minutes as best you can and look for the names of the supported scrapers in the URL, around the top of the page, and in the page's meta data when you **View Source**. If that sounds like too much, you can leave a note in the issue that says you're not sure whether it needs a custom scraper or not, and a maintainer will check it out for you.
 
