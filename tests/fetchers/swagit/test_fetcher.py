@@ -87,6 +87,13 @@ class TestSwagitFetcher:
     def test_extract_agenda_pdf_url_returns_none_when_missing(self, fetcher):
         assert fetcher._extract_agenda_pdf_url("<html></html>") is None
 
+    def test_normalize_date_formats_iso(self, fetcher):
+        assert fetcher._normalize_date("May 18, 2026") == "2026-05-18"
+
+    def test_normalize_date_passthrough_on_unparseable(self, fetcher):
+        raw = "not a date"
+        assert fetcher._normalize_date(raw) == raw
+
 
 class TestRegistry:
     def test_fetcher_registry_has_upland(self):

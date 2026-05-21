@@ -15,9 +15,11 @@ Cities register in EXTRA_REGISTRY with their swagit_subdomain and view_id.
 
 import json
 import re
+from datetime import datetime
 
 from bs4 import BeautifulSoup
 from clerk import Fetcher
+from parsedatetime import Calendar
 
 
 SWAGIT_PDF_URL_PATTERN = re.compile(
@@ -121,9 +123,15 @@ class SwagitFetcher(Fetcher):
             pdf_url,
             "minutes",
             self.simplified_meeting_name(title),
-            date_text,
+            self._normalize_date(date_text),
         )
         self.total_minutes += 1
+
+    def _normalize_date(self, date_text: str) -> str:
+        time_struct, parse_type = Calendar().parse(date_text)
+        if parse_type == 0:
+            return date_text
+        return datetime(*time_struct[:6]).strftime("%Y-%m-%d")
 
     def _extract_agenda_pdf_url(self, html: str) -> str | None:
         match = SWAGIT_PDF_URL_PATTERN.search(html)
