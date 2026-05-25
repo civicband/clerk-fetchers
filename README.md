@@ -33,6 +33,10 @@ See [**Adding a fetcher to clerk-fetchers**](CONTRIBUTING.md#adding-a-fetcher-to
 
 Run `pytest` locally to check your fetcher before submitting. CI also runs the full test suite automatically once you open a PR.
 
+### After Submission
+
+One of the maintainers will review your PR at our earliest convenience. We might have follow-up questions, which we'll post either as a comment on the PR (for overall/general feedback) or using the GitHub reviews workflow (for line-specific feedback). If we don't get a response to questions about your PR within a month, we'll close the PR to avoid stale PR buildup. You should feel free to reopen it when you come back, though! 
+
 ## Help
 
 Open a [GitHub issue](../../issues) to report bugs or request help with a fetcher you're trying to add. To reach the maintainers privately, email Philip at [hello@civic.band](mailto:hello@civic.band).
