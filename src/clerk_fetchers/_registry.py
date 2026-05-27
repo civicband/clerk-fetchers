@@ -15,10 +15,10 @@ FETCHER_REGISTRY = {
     "houston.tx": HoustonTXFetcher,
     "sanfrancisco.ca": SanFranciscoCAFetcher,
     "senado.pr": SenadoPRFetcher,
-    "upland.ca": SwagitFetcher,
+    "swagit": SwagitFetcher,
 }
 
 EXTRA_REGISTRY = {
     "example_city": {"base_url": "https://example-city.gov/meetings"},
-    "upland.ca": {"swagit_subdomain": "uplandca", "view_id": "299"},
+    "swagit": {"swagit_subdomain": "your-city", "view_id": "000"},
 }
