@@ -11,6 +11,11 @@ Each Swagit city has:
   * a numeric view_id identifying the archive collection (e.g. City Council)
 
 Cities register in EXTRA_REGISTRY with their swagit_subdomain and view_id.
+
+To add a new Swagit city, no new code is required. Add two entries to _registry.py:
+
+    FETCHER_REGISTRY: "yourcity.xx": SwagitFetcher
+    EXTRA_REGISTRY:   "yourcity.xx": {"swagit_subdomain": "yourcityxx", "view_id": "NNN"}
 """
 
 import json
@@ -42,6 +47,15 @@ class SwagitFetcher(Fetcher):
     Optional extra config:
         archive_path: trailing path segment for the archive list
                       (default: "city-council-archived-meetings")
+
+    Known quirks:
+        - Agenda PDFs are hosted on swagit-attachments.granicus.com regardless
+          of the city's own domain.
+        - Pagination is capped at MAX_ARCHIVE_PAGES (200) to prevent runaway
+          requests if the year filter never triggers.
+        - Archive pages list newest-first; fetching stops on the first row that
+          predates start_year rather than scanning all pages.
+        - Date strings are normalized to ISO-8601 via parsedatetime before use.
     """
 
     def child_init(self):
