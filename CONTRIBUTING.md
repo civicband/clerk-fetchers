@@ -34,14 +34,14 @@ required! Note the URL and which service the site uses on the issue.
 
 Fork this repository and create a feature branch for your fetcher.
 
-### 2. Create your fetcher directory
+### 2. Create your fetcher module
 
-Create a new directory under `src/clerk_fetchers/fetchers/` named after the municipality:
+Create a new module under `src/clerk_fetchers/fetchers/` named after the
+municipality's subdomain, with `.` replaced by `_` (e.g. the `berkeley.ca`
+subdomain lives in `berkeley_ca.py`):
 
 ```
-src/clerk_fetchers/fetchers/your_city_name/
-├── __init__.py   # Your Fetcher subclass
-└── README.md     # Documentation for this fetcher
+src/clerk_fetchers/fetchers/your_city_st.py   # Your Fetcher subclass
 ```
 
 ### 3. Implement the fetcher
@@ -67,29 +67,38 @@ class YourCityFetcher(Fetcher):
         return self.total_events, self.total_minutes
 ```
 
-See `src/clerk_fetchers/fetchers/example_city/` for a complete reference implementation.
+See `src/clerk_fetchers/fetchers/example_city.py` for a complete reference implementation.
 
 ### 4. Register the fetcher
 
-Add your fetcher to `src/clerk_fetchers/_registry.py`:
+Add your fetcher to `src/clerk_fetchers/_registry.py`. The registry key is the
+site's **subdomain** (e.g. `your_city.st`), matching the existing entries — not
+the module filename. Keep the entries after `example_city` alphabetical by
+subdomain.
 
 ```python
-from clerk_fetchers.fetchers.your_city_name import YourCityFetcher
+from clerk_fetchers.fetchers.your_city_st import YourCityFetcher
 
 FETCHER_REGISTRY = {
     "example_city": ExampleCityFetcher,
-    "your_city_name": YourCityFetcher,  # Add your entry
-}
-
-EXTRA_REGISTRY = {
-    "example_city": {"base_url": "https://example-city.gov/meetings"},
-    "your_city_name": {"base_url": "https://your-city.gov/meetings"},  # Add defaults
+    # Lines should be alphabetical by subdomain from this point
+    "your_city.st": YourCityFetcher,  # Add your entry, keyed by subdomain
 }
 ```
 
-### 5. Write a fetcher README
+`EXTRA_REGISTRY` is optional. Add an entry only if your fetcher needs default
+config (such as a `base_url`).
 
-Document your fetcher in `src/clerk_fetchers/fetchers/your_city_name/README.md`:
+```python
+EXTRA_REGISTRY = {
+    "example_city": {"base_url": "https://example-city.gov/meetings"},
+}
+```
+
+### 5. Document your fetcher (optional)
+
+Fetchers don't use a separate README file. If you want to document yours, a
+class docstring works well (see `example_city.py`):
 
 - Target site URL
 - Extra config keys and their defaults
@@ -97,10 +106,10 @@ Document your fetcher in `src/clerk_fetchers/fetchers/your_city_name/README.md`:
 
 ### 6. Write tests
 
-Create tests in `tests/fetchers/your_city_name/`:
+Create tests in `tests/fetchers/your_city_st/`:
 
 ```
-tests/fetchers/your_city_name/
+tests/fetchers/your_city_st/
 ├── __init__.py
 ├── test_fetcher.py
 └── fixtures/
