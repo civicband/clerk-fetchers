@@ -1,11 +1,10 @@
 from clerk_fetchers.fetchers.alamedausd_ca import AlamedaUSDFetcher
-from clerk_fetchers.fetchers.example_city import ExampleCityFetcher
 from clerk_fetchers.fetchers.berkeley_ca import BerkeleyCAFetcher
+from clerk_fetchers.fetchers.example_city import ExampleCityFetcher
 from clerk_fetchers.fetchers.houston_tx import HoustonTXFetcher
-from clerk_fetchers.fetchers.senado_pr import SenadoPRFetcher
 from clerk_fetchers.fetchers.sanfrancisco_ca import SanFranciscoCAFetcher
+from clerk_fetchers.fetchers.senado_pr import SenadoPRFetcher
 from clerk_fetchers.fetchers.swagit import SwagitFetcher
-
 
 FETCHER_REGISTRY = {
     "example_city": ExampleCityFetcher,
@@ -20,5 +19,6 @@ FETCHER_REGISTRY = {
 
 EXTRA_REGISTRY = {
     "example_city": {"base_url": "https://example-city.gov/meetings"},
+    "sanfrancisco.ca": {"calendar_url": "https://sfgov.legistar.com/Calendar.aspx"},
     "swagit": {"swagit_subdomain": "your-city", "view_id": "000"},
 }
