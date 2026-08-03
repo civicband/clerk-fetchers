@@ -180,5 +180,5 @@ class SanFranciscoCAFetcher(Fetcher):
                 events, minutes = self._process_page(soup)
                 self.total_events += events
                 self.total_minutes += minutes
-
+                initial_soup = soup
         return self.total_events, self.total_minutes
