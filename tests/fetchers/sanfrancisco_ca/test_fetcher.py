@@ -78,6 +78,17 @@ class TestSanFranciscoCAFetcher:
         assert (Path(fetcher.minutes_output_dir) / "BoardofSupervisors").is_dir()
         assert (Path(fetcher.agendas_output_dir) / "BoardofSupervisors").is_dir()
 
+    def test_row_with_unparseable_date_is_skipped(self, fetcher):
+        fetcher.all_agendas = True
+        fetcher.fetch_and_write_pdf = MagicMock()
+
+        from bs4 import BeautifulSoup
+
+        html = (FIXTURES_DIR / "year_page_1.html").read_text()
+        page = BeautifulSoup(html.replace("1/14/2025", "Deferred"), "html.parser")
+        assert fetcher._process_page(page) == (0, 0)
+        fetcher.fetch_and_write_pdf.assert_not_called()
+
     def test_existing_document_is_not_downloaded(self, fetcher):
         fetcher.all_agendas = True
         fetcher.check_if_exists = MagicMock(return_value=True)

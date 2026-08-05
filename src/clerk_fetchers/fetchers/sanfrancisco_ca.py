@@ -10,6 +10,9 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup, Tag
 from clerk import Fetcher
+from parsedatetime import Calendar
+
+calendar = Calendar()
 
 DEFAULT_CALENDAR_URL = "https://sfgov.legistar.com/Calendar.aspx"
 YEAR_EVENT_TARGET = "ctl00$ContentPlaceHolder1$lstYears"
@@ -130,15 +133,14 @@ class SanFranciscoCAFetcher(Fetcher):
                 continue
 
             date_text = cells[1].get_text(strip=True)
-            try:
-                month, day, year = (int(part) for part in date_text.split("/"))
-                meeting_date = date(year, month, day)
-            except (TypeError, ValueError):
+            time_struct, parse_type = calendar.parse(date_text)
+            if parse_type == 0:
                 self.logger.log(
                     f"Skipping meeting with invalid date: {date_text}",
                     level="warning",
                 )
                 continue
+            meeting_date = date(*time_struct[:3])
 
             events += 1
             date_string = meeting_date.isoformat()
