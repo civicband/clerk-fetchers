@@ -116,6 +116,20 @@ tests/fetchers/your_city_st/
     └── meetings_page.html   # Saved HTML/JSON responses from the target site
 ```
 
+HTML fixtures are local HTML files used as mocked responses in tests. For a
+municipal site, save the HTML response received by your fetcher, which may
+differ from the page after a browser has run JavaScript. Store it under your
+test directory's `fixtures/` folder and commit it with the tests so they can run
+without contacting the live site.
+
+Keep the markup your parser depends on, including relevant dates and links.
+Include representative edge cases, such as a meeting with no minutes link.
+The [example HTML fixture](tests/fetchers/example_city/fixtures/meetings_page.html)
+contains relative and absolute links as well as a meeting without minutes.
+The [example tests](tests/fetchers/example_city/test_fetcher.py) load that file
+with `Path.read_text()`, return it in a mocked `httpx.Response` using `respx`, and
+mock `fetch_and_write_pdf()` to prevent PDF downloads.
+
 Tests must:
 - Use mocked HTTP responses (saved fixtures, not live requests)
 - Verify that `fetch_events()` produces the expected results
