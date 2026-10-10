@@ -177,7 +177,7 @@ class SanFranciscoCAFetcher(Fetcher):
         initial_soup = BeautifulSoup(response.text, "html.parser")
         cookies = dict(response.cookies)
 
-        for year in range(self.start_year, self.today.year + 1):
+        for year in range(self.start_date.year, self.end_date.year + 1):
             for soup in self._year_pages(initial_soup, cookies, year):
                 events, minutes = self._process_page(soup)
                 self.total_events += events

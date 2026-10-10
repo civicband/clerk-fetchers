@@ -79,7 +79,7 @@ class BerkeleyCAFetcher(Fetcher):
                     },
                 ],
                 "QueryLimit": 0,
-                "FromDate": f"{self.start_year}-01-01T08:00:00.000Z",
+                "FromDate": f"{self.start_date.year}-01-01T08:00:00.000Z",
             }
             try:
                 fetched_events, fetched_minutes = self.fetch_from_json(json_data)
