@@ -45,6 +45,8 @@ class TestSanFranciscoCAFetcher:
 
     def test_fetch_events_posts_year_paginates_and_downloads(self, fetcher):
         fetcher.today = datetime(2025, 7, 1, tzinfo=UTC)
+        fetcher.start_date = datetime(2025, 1, 1, tzinfo=UTC)
+        fetcher.end_date = datetime(2025, 12, 31, tzinfo=UTC)
         fetcher.all_agendas = True
         fetcher.request = MagicMock(
             side_effect=[

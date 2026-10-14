@@ -126,13 +126,22 @@ class BryanCountyGAFetcher(Fetcher):
         links = soup.select("#widget_321_447_171 li a")
         for link in links:
             year = link.text.strip()
-            if parse(year) < self.start_date or parse(year) > self.end_date:
+            try:
+                year_datetime = parse(year)
+            except Exception as e:
+                self.logger.log(
+                    f"Error parsing year from text: {year}",
+                    level="error",
+                    error=str(e),
+                )
+                continue
+            if year_datetime < self.start_date or year_datetime > self.end_date:
                 self.logger.log(
                     f"Skipping year {year} as it is outside the date range."
                 )
                 continue
             href: _AttributeValue | None = link.get("href")
-            if href and year == "2014":
+            if href:
                 year_url = f"{self.base_url}{href}"
                 year_response = self.request(
                     method="GET", url=year_url, headers=self.headers
@@ -168,6 +177,16 @@ class BryanCountyGAFetcher(Fetcher):
                             continue
                         meeting_name = self.simplified_meeting_name(meeting_name)
                         minutes_href: _AttributeValue | None = minutes_link.get("href")
+                        if self.check_if_exists(
+                            date=meeting_date.strftime("%Y-%m-%d"),
+                            meeting=meeting_name,
+                            kind="minutes",
+                        ):
+                            self.logger.log(
+                                f"Skipping existing minutes for {meeting_name} on {meeting_date.strftime('%Y-%m-%d')}.",
+                                level="info",
+                            )
+                            continue
                         if minutes_href and meeting_date:
                             self.fetch_and_write_pdf(
                                 url=f"{self.base_url}{minutes_href}",
