@@ -27,6 +27,9 @@ clerk-fetchers = "clerk_fetchers:ClerkFetchersPlugin"
 dev = [
     "pytest>=7.4.0",
     "respx>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "pytest-click>=1.1.0",
 ]
 
 [build-system]
