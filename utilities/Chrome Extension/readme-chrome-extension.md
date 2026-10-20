@@ -4,7 +4,7 @@
 
 ## Description
 
-This Chrome extension lets the community easily check whether a set of civic meeting data you'd like to add to Civic Band is likely hosted through an already-supported backend. If you install this Chrome extension, you can click it while on a Civic Meeting data page to see a popup letting you know whether the page is:
+This Chrome extension lets the community easily check whether a set of civic meeting data you'd like to add to CivicBand is likely hosted through an already-supported backend. If you install this Chrome extension, you can click it while on a Civic Meeting data page to see a popup letting you know whether the page is:
     - likely meeting data from a supported backend, and if so, which one
     - almost-but-not-quite the page we scrape
     - a page that might require a custom scraper.

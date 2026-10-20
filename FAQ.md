@@ -8,7 +8,7 @@ Municipalities are local civic bodies like cities, towns, boroughs, counties,
 and public boards (like a School Board, Planning Board, or Port District
 Oversight Board).
 
-For Civic Band's purposes, consider whether the body posts public meeting
+For CivicBand's purposes, consider whether the body posts public meeting
 records you want to be able to search. City councils, county commissions,
 school boards, planning or zoning boards, water districts, and similar local
 authorities are generally in scope.
